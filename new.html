@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wings Engineering - Electrical Goods</title>
+    <link rel="stylesheet" href="stylesgpt.css">
+    <style>
+        /* Add the rest of your styles here */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #333333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+        }
+
+        .carousel-prev,
+        .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #333;
+            border: none;
+            padding: 10px;
+            outline: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .carousel-prev:hover,
+        .carousel-next:hover {
+            background-color: #555;
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .hero {
+            background: url('background-image.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333333;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            padding-top: 20px;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 16px;
+            transition: margin-left 0.5s;
+        }
+
+        .sidebar.show {
+            width: 250px;
+        }
+
+        .sidebar.show a {
+            opacity: 1;
+        }
+
+        /* Add the new styles for the toggle button */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            border: none;
+            outline: none;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="#" class="active">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <header>
+        <h1>Wings Engineering</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item"><img src="image1.jpg" alt="Image 1"></div>
+            <div class="carousel-item"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="carousel-item"><img src="image3.jpg" alt="Image 3"></div>
+        </div>
+
+        <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <div class="hero">
+        <h2>Welcome to Wings Engineering</h2>
+    </div>
+
+    <section>
+        <h2>About Us</h2>
+        <p>Wings Engineering specializes in providing high-quality electrical goods for large enterprises. Our products include large cables, wires, and more.</p>
+    </section>
+
+    <section>
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries or need assistance, feel free to contact us at <a href="mailto:info@wingsengineering.com">info@wingsengineering.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Wings Engineering. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var content = document.getElementById('content');
+            sidebar.classList.toggle('show');
+            content.style.marginLeft = (sidebar.classList.contains('show')) ? '250px' : '0';
+        }
+    </script>
+
+</body>
+</html>
